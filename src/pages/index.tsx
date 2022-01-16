@@ -142,7 +142,7 @@ const Home: NextPage = () => {
   function renderRow(props: ListChildComponentProps) {
     const { index, style } = props;
     return (
-      <ListItem sx={{ bgcolor: "#ffffff" }}>
+      <ListItem style={style}sx={{ bgcolor: "#ffffff" }}>
         <Container
           sx={{
             display: "flex",
@@ -216,7 +216,7 @@ const Home: NextPage = () => {
 
   async function createTodoItems(){
     await API.graphql(graphqlOperation(createTodo, {input: {name: "Thanatat Pronpraserd",product_list:items,product_count:itemsNum}}));
-    await API.graphql(graphqlOperation(createApproved, {input: {name: "Thanatat Pronpraserd",product_list:items,product_count:itemsNum}}));
+    // await API.graphql(graphqlOperation(createApproved, {input: {name: "Thanatat Pronpraserd",product_list:items,product_count:itemsNum}}));
     resetItemList();
   }
   
@@ -234,9 +234,9 @@ const Home: NextPage = () => {
         <FixedSizeList
           height={400}
           width={"100%"}
-          itemSize={46}
+          itemSize={80}
           itemCount={items.length}
-          overscanCount={8}
+          overscanCount={5}
         >
           {renderRow}
         </FixedSizeList>
