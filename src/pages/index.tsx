@@ -33,6 +33,7 @@ import Avatar from "@mui/material/Avatar";
 import { FixedSizeList, ListChildComponentProps } from "react-window";
 import { API, graphqlOperation  } from "aws-amplify";
 import { createTodo, updateTodo, deleteTodo } from '../graphql/mutations';
+import { createApproved, updateApproved, deleteApproved } from '../graphql/mutations';
 
 const Modalstyle = {
   position: "absolute",
@@ -215,6 +216,7 @@ const Home: NextPage = () => {
 
   async function createTodoItems(){
     await API.graphql(graphqlOperation(createTodo, {input: {name: "Thanatat Pronpraserd",product_list:items,product_count:itemsNum}}));
+    await API.graphql(graphqlOperation(createApproved, {input: {name: "Thanatat Pronpraserd",product_list:items,product_count:itemsNum}}));
     resetItemList();
   }
   

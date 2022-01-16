@@ -1,6 +1,6 @@
 {
   "auth": {
-    "wilclient06cda858": {
+    "wilapp6973fb15": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -24,7 +24,7 @@
     }
   },
   "api": {
-    "wilclient": {
+    "wilapp": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -33,15 +33,15 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 364,
-              "apiKeyExpirationDate": "2023-01-15T10:28:54.223Z",
-              "description": "webclient api key"
+              "apiKeyExpirationDate": "2023-01-15T16:49:09.746Z",
+              "description": "wil api key"
             }
           },
           "additionalAuthenticationProviders": [
             {
               "authenticationType": "AMAZON_COGNITO_USER_POOLS",
               "userPoolConfig": {
-                "userPoolId": "authwilclient06cda858"
+                "userPoolId": "authwilapp6973fb15"
               }
             }
           ]

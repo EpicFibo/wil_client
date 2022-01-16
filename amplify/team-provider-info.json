@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-wilclient-dev-152634-authRole",
-      "UnauthRoleArn": "arn:aws:iam::445709509277:role/amplify-wilclient-dev-152634-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::445709509277:role/amplify-wilclient-dev-152634-authRole",
+      "AuthRoleName": "amplify-wilapp-dev-234507-authRole",
+      "UnauthRoleArn": "arn:aws:iam::445709509277:role/amplify-wilapp-dev-234507-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::445709509277:role/amplify-wilapp-dev-234507-authRole",
       "Region": "ap-southeast-1",
-      "DeploymentBucketName": "amplify-wilclient-dev-152634-deployment",
-      "UnauthRoleName": "amplify-wilclient-dev-152634-unauthRole",
-      "StackName": "amplify-wilclient-dev-152634",
-      "StackId": "arn:aws:cloudformation:ap-southeast-1:445709509277:stack/amplify-wilclient-dev-152634/0749f9a0-76a6-11ec-ad94-069dd3531332",
-      "AmplifyAppId": "dt75oqk2r5v0t"
+      "DeploymentBucketName": "amplify-wilapp-dev-234507-deployment",
+      "UnauthRoleName": "amplify-wilapp-dev-234507-unauthRole",
+      "StackName": "amplify-wilapp-dev-234507",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:445709509277:stack/amplify-wilapp-dev-234507/ac825ee0-76eb-11ec-bead-026960f49b34",
+      "AmplifyAppId": "d3dbq7x10maemk"
     },
     "categories": {
       "auth": {
-        "wilclient06cda858": {}
+        "wilapp6973fb15": {}
       }
     }
   }

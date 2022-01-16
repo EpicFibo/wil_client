@@ -5,7 +5,7 @@
 export type CreateTodoInput = {
   id?: string | null,
   name: string,
-  product_list?: Array< string | null > | null,
+  product_list: Array< string | null >,
   product_count?: Array< number | null > | null,
 };
 
@@ -74,7 +74,7 @@ export type Todo = {
   __typename: "Todo",
   id: string,
   name: string,
-  product_list?: Array< string | null > | null,
+  product_list: Array< string | null >,
   product_count?: Array< number | null > | null,
   createdAt: string,
   updatedAt: string,
@@ -88,6 +88,43 @@ export type UpdateTodoInput = {
 };
 
 export type DeleteTodoInput = {
+  id: string,
+};
+
+export type CreateApprovedInput = {
+  id?: string | null,
+  name: string,
+  product_list: Array< string | null >,
+  product_count?: Array< number | null > | null,
+};
+
+export type ModelApprovedConditionInput = {
+  name?: ModelStringInput | null,
+  product_list?: ModelStringInput | null,
+  product_count?: ModelIntInput | null,
+  and?: Array< ModelApprovedConditionInput | null > | null,
+  or?: Array< ModelApprovedConditionInput | null > | null,
+  not?: ModelApprovedConditionInput | null,
+};
+
+export type Approved = {
+  __typename: "Approved",
+  id: string,
+  name: string,
+  product_list: Array< string | null >,
+  product_count?: Array< number | null > | null,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateApprovedInput = {
+  id: string,
+  name?: string | null,
+  product_list?: Array< string | null > | null,
+  product_count?: Array< number | null > | null,
+};
+
+export type DeleteApprovedInput = {
   id: string,
 };
 
@@ -123,6 +160,22 @@ export type ModelTodoConnection = {
   nextToken?: string | null,
 };
 
+export type ModelApprovedFilterInput = {
+  id?: ModelIDInput | null,
+  name?: ModelStringInput | null,
+  product_list?: ModelStringInput | null,
+  product_count?: ModelIntInput | null,
+  and?: Array< ModelApprovedFilterInput | null > | null,
+  or?: Array< ModelApprovedFilterInput | null > | null,
+  not?: ModelApprovedFilterInput | null,
+};
+
+export type ModelApprovedConnection = {
+  __typename: "ModelApprovedConnection",
+  items:  Array<Approved | null >,
+  nextToken?: string | null,
+};
+
 export type CreateTodoMutationVariables = {
   input: CreateTodoInput,
   condition?: ModelTodoConditionInput | null,
@@ -133,7 +186,7 @@ export type CreateTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
-    product_list?: Array< string | null > | null,
+    product_list: Array< string | null >,
     product_count?: Array< number | null > | null,
     createdAt: string,
     updatedAt: string,
@@ -150,7 +203,7 @@ export type UpdateTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
-    product_list?: Array< string | null > | null,
+    product_list: Array< string | null >,
     product_count?: Array< number | null > | null,
     createdAt: string,
     updatedAt: string,
@@ -167,7 +220,58 @@ export type DeleteTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
-    product_list?: Array< string | null > | null,
+    product_list: Array< string | null >,
+    product_count?: Array< number | null > | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type CreateApprovedMutationVariables = {
+  input: CreateApprovedInput,
+  condition?: ModelApprovedConditionInput | null,
+};
+
+export type CreateApprovedMutation = {
+  createApproved?:  {
+    __typename: "Approved",
+    id: string,
+    name: string,
+    product_list: Array< string | null >,
+    product_count?: Array< number | null > | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateApprovedMutationVariables = {
+  input: UpdateApprovedInput,
+  condition?: ModelApprovedConditionInput | null,
+};
+
+export type UpdateApprovedMutation = {
+  updateApproved?:  {
+    __typename: "Approved",
+    id: string,
+    name: string,
+    product_list: Array< string | null >,
+    product_count?: Array< number | null > | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteApprovedMutationVariables = {
+  input: DeleteApprovedInput,
+  condition?: ModelApprovedConditionInput | null,
+};
+
+export type DeleteApprovedMutation = {
+  deleteApproved?:  {
+    __typename: "Approved",
+    id: string,
+    name: string,
+    product_list: Array< string | null >,
     product_count?: Array< number | null > | null,
     createdAt: string,
     updatedAt: string,
@@ -183,7 +287,7 @@ export type GetTodoQuery = {
     __typename: "Todo",
     id: string,
     name: string,
-    product_list?: Array< string | null > | null,
+    product_list: Array< string | null >,
     product_count?: Array< number | null > | null,
     createdAt: string,
     updatedAt: string,
@@ -203,7 +307,45 @@ export type ListTodosQuery = {
       __typename: "Todo",
       id: string,
       name: string,
-      product_list?: Array< string | null > | null,
+      product_list: Array< string | null >,
+      product_count?: Array< number | null > | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetApprovedQueryVariables = {
+  id: string,
+};
+
+export type GetApprovedQuery = {
+  getApproved?:  {
+    __typename: "Approved",
+    id: string,
+    name: string,
+    product_list: Array< string | null >,
+    product_count?: Array< number | null > | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListApprovedsQueryVariables = {
+  filter?: ModelApprovedFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListApprovedsQuery = {
+  listApproveds?:  {
+    __typename: "ModelApprovedConnection",
+    items:  Array< {
+      __typename: "Approved",
+      id: string,
+      name: string,
+      product_list: Array< string | null >,
       product_count?: Array< number | null > | null,
       createdAt: string,
       updatedAt: string,
@@ -217,7 +359,7 @@ export type OnCreateTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
-    product_list?: Array< string | null > | null,
+    product_list: Array< string | null >,
     product_count?: Array< number | null > | null,
     createdAt: string,
     updatedAt: string,
@@ -229,7 +371,7 @@ export type OnUpdateTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
-    product_list?: Array< string | null > | null,
+    product_list: Array< string | null >,
     product_count?: Array< number | null > | null,
     createdAt: string,
     updatedAt: string,
@@ -241,7 +383,43 @@ export type OnDeleteTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
-    product_list?: Array< string | null > | null,
+    product_list: Array< string | null >,
+    product_count?: Array< number | null > | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateApprovedSubscription = {
+  onCreateApproved?:  {
+    __typename: "Approved",
+    id: string,
+    name: string,
+    product_list: Array< string | null >,
+    product_count?: Array< number | null > | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateApprovedSubscription = {
+  onUpdateApproved?:  {
+    __typename: "Approved",
+    id: string,
+    name: string,
+    product_list: Array< string | null >,
+    product_count?: Array< number | null > | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteApprovedSubscription = {
+  onDeleteApproved?:  {
+    __typename: "Approved",
+    id: string,
+    name: string,
+    product_list: Array< string | null >,
     product_count?: Array< number | null > | null,
     createdAt: string,
     updatedAt: string,

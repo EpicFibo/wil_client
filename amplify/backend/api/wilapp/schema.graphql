@@ -8,3 +8,9 @@ type Todo @model {
   product_list: [String]!
   product_count: [Int]
 }
+type Approved @model{
+  id: ID!
+  name: String!
+  product_list: [String]!
+  product_count: [Int]
+}
