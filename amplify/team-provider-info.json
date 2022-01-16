@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-wilclient-dev-152634-authRole",
+      "UnauthRoleArn": "arn:aws:iam::445709509277:role/amplify-wilclient-dev-152634-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::445709509277:role/amplify-wilclient-dev-152634-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-wilclient-dev-152634-deployment",
+      "UnauthRoleName": "amplify-wilclient-dev-152634-unauthRole",
+      "StackName": "amplify-wilclient-dev-152634",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:445709509277:stack/amplify-wilclient-dev-152634/0749f9a0-76a6-11ec-ad94-069dd3531332",
+      "AmplifyAppId": "dt75oqk2r5v0t"
+    },
+    "categories": {
+      "auth": {
+        "wilclient06cda858": {}
+      }
+    }
+  }
+}
