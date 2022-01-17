@@ -104,11 +104,19 @@ const Home: NextPage = () => {
     }
   };
   const addItem = () => {
-    try {
-      setItems([...items,itemName]);
-      setItemsNum([...itemsNum,itemcount]);
-      setAccept(false);
-    } catch (error) {}
+    if(items.indexOf(itemName) != -1){
+      let newArr = [...itemsNum]; // copying the old datas array
+      let index = items.indexOf(itemName);
+      newArr[index] = itemcount + newArr[index];
+      setItemsNum(newArr);
+    }
+    else{
+      try {
+        setItems([...items,itemName]);
+        setItemsNum([...itemsNum,itemcount]);
+        setAccept(false);
+      } catch (error) {}
+    }
   };
   const resetItem = () => {
     setValues(1);
